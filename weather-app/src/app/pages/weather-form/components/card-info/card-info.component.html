@@ -1,1 +1,16 @@
-<p>card-info works!</p>
+
+    <div class="weather-card">
+       <img src='../../../assets/images/{{weather.icon}}.png'>
+       <p class="weather-card__name"> Nombre: {{ weather.name }}</p>
+       <p class="weather-card__country"> Nombre: {{ weather.country }}</p>
+       <p class="weather-card__temp"> Temperatura: {{ weather.temp }}</p>
+       <p class="weather-card__weather"> Tiempo: {{ weather.main }}</p>
+       <p class="weather-card__descrip"> Tiempo: {{ weather.description }}</p>
+       <div class="weather-temp">
+         <p class="weather-temp__max"> Temperatura max: {{ weather.temp_max }}</p>
+         <p class="weather-temp__min"> Temperatura min: {{ weather.temp_min }}</p>
+       </div>
+       <p class="weather-card__hum"> Humedad: {{ weather.humidity }}</p>
+    </div>
+
+

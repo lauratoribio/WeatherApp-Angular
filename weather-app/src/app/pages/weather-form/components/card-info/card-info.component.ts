@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { WeatherInfo } from '../../models/weather.models';
 
 @Component({
   selector: 'app-card-info',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-info.component.scss']
 })
 export class CardInfoComponent implements OnInit {
+
+  @Input() weather: WeatherInfo
 
   constructor() { }
 

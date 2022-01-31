@@ -1,3 +1,4 @@
+import { WeatherInfo } from './../../models/weather.models';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardFormComponent implements OnInit {
 
+  public weather: WeatherInfo
+
   constructor() { }
 
   ngOnInit(): void {
+  
   }
+
+ 
 
 }

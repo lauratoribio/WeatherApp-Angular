@@ -1,18 +1,21 @@
 
 
-<!-- <div class="weather-list">
-  <div class="weather-list__form">
-    <app-card-form></app-card-form>
-  </div>
-  <div class="weather-list__info">
-    <app-card-info></app-card-info>
-  </div>
-</div> -->
-
-<div class="weather">
+<!-- <div class="weather">
    
   <div class="weather__form">
     <h2>What is the weather like?</h2>
+    <app-card-form></app-card-form>
+  </div>
+
+  <div class="weather__info" *ngFor="let weather of weatherInfo">
+    <app-card-info></app-card-info>
+  </div>
+
+</div> -->
+
+<div class="weather">
+  <h2>How's the weather?</h2>
+  <div class="weather__form">
     <form (submit)="submitLocation(cityName)">
       <label for="cityName"></label>
       <input type="text" name="cityName" id="cityName" placeholder="City" #cityName>
@@ -22,12 +25,11 @@
 
   <div class="weather__info">
     <div class="weather-card" *ngFor="let weather of weatherInfo">
-       <img src='../../../assets/images/{{weather.icon}}.png'>
-       <p class="weather-card__name"> Nombre: {{ weather.name }}</p>
-       <p class="weather-card__country"> Nombre: {{ weather.country }}</p>
-       <p class="weather-card__temp"> Temperatura: {{ weather.temp }}</p>
-       <p class="weather-card__weather"> Tiempo: {{ weather.main }}</p>
-       <p class="weather-card__descrip"> Tiempo: {{ weather.description }}</p>
+       <img class="weather-card__image" src='../../../assets/images/{{weather.icon}}.png'>
+       <p class="weather-card__temp">{{ weather.temp }}</p>
+       <p class="weather-card__name">{{ weather.name }}, {{ weather.country }}</p>
+       <p class="weather-card__weather">{{ weather.main }}</p>
+       <p class="weather-card__descrip">{{ weather.description }}</p>
        <div class="weather-temp">
          <p class="weather-temp__max"> Temperatura max: {{ weather.temp_max }}</p>
          <p class="weather-temp__min"> Temperatura min: {{ weather.temp_min }}</p>
