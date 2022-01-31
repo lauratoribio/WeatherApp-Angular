@@ -1,5 +1,5 @@
 
-<h4>What is the weather like?</h4>
+
 <!-- <div class="weather-list">
   <div class="weather-list__form">
     <app-card-form></app-card-form>
@@ -9,29 +9,31 @@
   </div>
 </div> -->
 
-<div class="weather-list">
-
-  <div class="weather-list__form">
-    <label for="cityName"></label>
-    <input type="text" name="cityName" id="cityName" placeholder="City" [(ngModel)]="weather.cityName">
-    <button>Buscar</button>
+<div class="weather">
+   
+  <div class="weather__form">
+    <h2>What is the weather like?</h2>
+    <form (submit)="submitLocation(cityName)">
+      <label for="cityName"></label>
+      <input type="text" name="cityName" id="cityName" placeholder="City" #cityName>
+      <button>Buscar</button>
+    </form>
   </div>
 
-  <div class="weather-list__info">
-    <ul class="weather-info">
-      <li class="weather-info__item">
-        <div class="weather-card">
-          <img src="{{ weather.src }}">
-          <p class="weather-card__name">{{ weather.weather}}</p>
-          <p class="weather-card__temp">{{ weather.temp }}</p>
-          <div class="weather-temp">
-            <p class="weather-temp__max">{{ weather.temp_max }}</p>
-            <p class="weather-temp__min">{{ weather.temp_min }}</p>
-          </div>
-          <p class="weather-card__hum">{{ weather.humidity }}</p>
-        </div>
-      </li>
-    </ul>
+  <div class="weather__info">
+    <div class="weather-card" *ngFor="let weather of weatherInfo">
+       <img src='../../../assets/images/{{weather.icon}}.png'>
+       <p class="weather-card__name"> Nombre: {{ weather.name }}</p>
+       <p class="weather-card__country"> Nombre: {{ weather.country }}</p>
+       <p class="weather-card__temp"> Temperatura: {{ weather.temp }}</p>
+       <p class="weather-card__weather"> Tiempo: {{ weather.main }}</p>
+       <p class="weather-card__descrip"> Tiempo: {{ weather.description }}</p>
+       <div class="weather-temp">
+         <p class="weather-temp__max"> Temperatura max: {{ weather.temp_max }}</p>
+         <p class="weather-temp__min"> Temperatura min: {{ weather.temp_min }}</p>
+       </div>
+       <p class="weather-card__hum"> Humedad: {{ weather.humidity }}</p>
+    </div>
   </div>
 
 </div>
