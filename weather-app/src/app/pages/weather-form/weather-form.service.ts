@@ -15,7 +15,7 @@ export class WeatherFormService {
 
   //Inyeccion de dependencias
   constructor(private http: HttpClient) {
-    this.baseUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${this.apiKey}&q=`
+    this.baseUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${this.apiKey}&units=metric&q=`
    }
 
   //  getWeather(cityName: string) {
