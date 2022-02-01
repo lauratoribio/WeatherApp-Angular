@@ -9,6 +9,7 @@ import { CardFormComponent } from './pages/weather-form/components/card-form/car
 import { CardInfoComponent } from './pages/weather-form/components/card-info/card-info.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     WeatherFormComponent,
     CardFormComponent,
     CardInfoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

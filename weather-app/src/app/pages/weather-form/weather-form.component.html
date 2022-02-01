@@ -50,13 +50,22 @@
     <div class="weather-card" *ngFor="let weather of weatherInfo">
        <img class="weather-card__image" src='../../../assets/images/{{weather.icon}}.png'>
        <p class="weather-card__temp">{{ weather.temp }}º</p>
-       <p class="weather-card__name">{{ weather.name }}, {{ weather.country }}</p>
+       <p class="weather-card__name">{{ weather.name }}</p>
        <p class="weather-card__weather">{{ weather.main }}, {{ weather.description }}</p>
-       <div class="weather-temp">
-         <p class="weather-temp__max"> Temperatura max: {{ weather.temp_max }}º</p>
-         <p class="weather-temp__min"> Temperatura min: {{ weather.temp_min }}º</p>
-       </div>
-       <p class="weather-card__hum"> Humedad: {{ weather.humidity }}%</p>
+       <div class="weather-card__main">
+        <div  class="main-item">
+         <p class="main-item__title">Max</p>
+         <p class="main-item__p">{{ weather.temp_max }}º</p>
+        </div>
+        <div  class="main-item">
+         <p class="main-item__title">Min</p>
+         <p class="main-item__p">{{ weather.temp_min }}º</p>
+        </div>
+        <div  class="main-item">
+         <p class="main-item__title">Hum</p>
+         <p class="main-item__p">{{ weather.humidity }}%</p>
+        </div>
+      </div>
     </div>
   </div>
 
