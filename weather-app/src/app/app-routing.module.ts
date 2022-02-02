@@ -13,14 +13,14 @@ const routes: Routes = [
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/404' },
 
-    { path: 'weather-form', loadChildren: () => 
-      import('./pages/weather-form/weather-form.module').then(m => m.WeatherFormModule)},
+    // { path: 'weather-form', loadChildren: () => 
+    //   import('./pages/weather-form/weather-form.module').then(m => m.WeatherFormModule)},
 
-    { path: 'card-form', loadChildren: () =>
-    import('./pages/weather-form/components/card-form/card-form.module').then(m => m.CardFormModule)},
+    // { path: 'card-form', loadChildren: () =>
+    // import('./pages/weather-form/components/card-form/card-form.module').then(m => m.CardFormModule)},
 
-    { path: 'card-info', loadChildren: () =>
-    import('./pages/weather-form/components/card-info/card-info.module').then(m => m.CardInfoModule)},
+    // { path: 'card-info', loadChildren: () =>
+    // import('./pages/weather-form/components/card-info/card-info.module').then(m => m.CardInfoModule)},
 
 ]
 
