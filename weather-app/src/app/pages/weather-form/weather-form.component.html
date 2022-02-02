@@ -1,73 +1,18 @@
 
 
-<!-- <div class="weather">
+<div class="weather">
    
   <div class="weather__form">
-    <h2>What is the weather like?</h2>
-    <app-card-form></app-card-form>
+    <h2>Good<br />Morning!</h2>
+    <!--Recoger el output del hijo-->
+    <app-card-form (sendName)="submitLocation($event)"></app-card-form>
   </div>
 
-  <div class="weather__info" *ngFor="let weather of weatherInfo">
-    <app-card-info></app-card-info>
-  </div>
-
-</div> -->
-
-<div class="weather">
-  <h2>Good<br />Morning!</h2>
-  <div class="weather__form">
-    <form (submit)="submitLocation(cityName)">
-      <label for="cityName"></label>
-      <input type="text" name="cityName" id="cityName" placeholder="City" #cityName>
-      <button>Buscar</button>
-    </form>
-  </div>
-
-  <div class="weather__info">
-    <div class="weather-card">
-       <img class="weather-card__image" src='../../../assets/images/01d.png'>
-       <p class="weather-card__temp">12º</p>
-       <p class="weather-card__name">Madrid</p>
-       <p class="weather-card__weather">Soleado, cielo despejado</p>
-       <div class="weather-card__main">
-         <div  class="main-item">
-          <p class="main-item__title">Max</p>
-          <p class="main-item__p">16º</p>
-         </div>
-         <div  class="main-item">
-          <p class="main-item__title">Min</p>
-          <p class="main-item__p">2º</p>
-         </div>
-         <div  class="main-item">
-          <p class="main-item__title">Hum</p>
-          <p class="main-item__p">5%</p>
-         </div>
-       </div>
+  <ng-template [ngIf]="!searchIsDone">
+    <div class="weather__info" *ngFor="let weather of weatherInfo">
+      <app-card-info [weather]="weather"></app-card-info>
     </div>
-  </div>
-
-  <div class="weather__info">
-    <div class="weather-card" *ngFor="let weather of weatherInfo">
-       <img class="weather-card__image" src='../../../assets/images/{{weather.icon}}.png'>
-       <p class="weather-card__temp">{{ weather.temp }}º</p>
-       <p class="weather-card__name">{{ weather.name }}</p>
-       <p class="weather-card__weather">{{ weather.main }}, {{ weather.description }}</p>
-       <div class="weather-card__main">
-        <div  class="main-item">
-         <p class="main-item__title">Max</p>
-         <p class="main-item__p">{{ weather.temp_max }}º</p>
-        </div>
-        <div  class="main-item">
-         <p class="main-item__title">Min</p>
-         <p class="main-item__p">{{ weather.temp_min }}º</p>
-        </div>
-        <div  class="main-item">
-         <p class="main-item__title">Hum</p>
-         <p class="main-item__p">{{ weather.humidity }}%</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </ng-template>
 
 </div>
 

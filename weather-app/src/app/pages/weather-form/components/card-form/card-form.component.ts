@@ -1,5 +1,5 @@
 import { WeatherInfo } from './../../models/weather.models';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card-form',
@@ -7,15 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-form.component.scss']
 })
 export class CardFormComponent implements OnInit {
-
-  public weather: WeatherInfo
+  //Preparar el Output
+  @Output() sendName = new EventEmitter<string>()
+  public city: string = ''
 
   constructor() { }
 
   ngOnInit(): void {
-  
+
   }
 
- 
+
+
+  submitLocation() {
+   // Emitir un output que recoja el padre
+   this.sendName.emit(this.city)
+
+   this.city = ''
+  }
 
 }

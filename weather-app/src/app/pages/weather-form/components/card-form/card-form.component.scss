@@ -1,0 +1,31 @@
+@import "../../../../../styles/_variables";
+
+input {
+  font-family: $primaryFont;
+  font-weight: 500;
+  color: $blue;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  &:focus {
+    outline: none;
+    border: none;
+    color: $blue;
+  }
+}
+button {
+  font-family: $primaryFont;
+  font-weight: 500;
+  background-color: $yellow;
+  color: #ffffff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  cursor: pointer;
+}

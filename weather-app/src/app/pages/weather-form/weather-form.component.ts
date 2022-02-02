@@ -11,13 +11,15 @@ export class WeatherFormComponent implements OnInit {
 
   public weatherInfo: WeatherInfo[] = []
   public weather: WeatherInfo
+  searchIsDone: boolean = false
+
 
   //Inyeccion de dependencias
   constructor(private weatherFormService: WeatherFormService) { }
 
    //Inicializamos el listado de info
   ngOnInit(): void {
-    this.getWeatherInfo('')
+    this.getWeatherInfo('madrid')
   }
 
      getWeatherInfo(cityName: string): void {
@@ -29,13 +31,8 @@ export class WeatherFormComponent implements OnInit {
      )
   }
 
-  submitLocation(cityName: HTMLInputElement) {
-    this.getWeatherInfo(cityName.value)
-
-    //Para que limpie el formulario:
-    cityName.value = ''
-    cityName.focus()
-    return false
+  submitLocation(city: string) {
+    this.getWeatherInfo(city)
   }
 
 }

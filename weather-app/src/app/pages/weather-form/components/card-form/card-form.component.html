@@ -1,6 +1,7 @@
-    <!-- <form (submit)="submitLocation(cityName)">
-      <label for="cityName"></label>
-      <input type="text" name="cityName" id="cityName" placeholder="City" #cityName>
-      <button>Buscar</button>
-    </form> -->
+<form>
+  <label for="cityName"></label>
+  <input type="text" name="cityName" id="cityName" placeholder="City" [(ngModel)]="city">
+  <button (click)="submitLocation()">Buscar</button>
+</form> 
+      
 
