@@ -8,7 +8,7 @@
        <input type="text" id="name" formControlName="name" placeholder="Your name">
        <div class="text-error" *ngIf="!userLoginForm.get('name')?.valid && 
        (userLoginForm.get('name')?.dirty || submitted)">
-           El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+            Name is incorrect, it must contain at least 6 characters and cannot exceed 20 characters.
        </div>
    </div>
 
@@ -17,7 +17,7 @@
        <input type="password" id="password" formControlName="password" placeholder="Your password">
        <div class="text-error" *ngIf="!userLoginForm.get('password')?.valid &&
        (userLoginForm.get('password')?.dirty || submitted)">
-        La contraseña es incorrecta, debe contener al menos 6 caracteres, 1 mayusc, 1 minusc y 1 num.
+       Password is incorrect, it must contain at least 6 characters, 1 uppercase, 1 lowercase and 1 num.
        </div>
    </div>
     <button type="submit">Login</button>

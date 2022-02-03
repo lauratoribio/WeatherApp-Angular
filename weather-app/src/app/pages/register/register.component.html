@@ -1,53 +1,64 @@
   
- <div class="login-container">
-    <h2>Welcome!</h2>
+ <div class="register-container">
+    <h2>Nice to<br> meet you!</h2>
   
-    <form class="login-container__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userRegisterForm">
-     <div class="login-container__field">
+    <form class="register-container__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userRegisterForm">
+     <div class="register-container__field">
          <label for="name"></label>
          <input type="text" id="name" formControlName="name" placeholder="Your name">
          <div class="text-error" *ngIf="!userRegisterForm.get('name')?.valid && 
          (userRegisterForm.get('name')?.dirty || submitted)">
-             El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+            <p>Name is incorrect, it cannot exceed 20 characters.</p>
          </div>
-     </div>
+      </div>
   
-     <div class="login-container__field">
+      <div class="register-container__field">
         <label for="lastName"></label>
-        <input type="text" id="lastName" formControlName="lastName" placeholder="Your lastName">
+        <input type="text" id="lastName" formControlName="lastName" placeholder="Your last name">
         <div class="text-error" *ngIf="!userRegisterForm.get('lastName')?.valid && 
         (userRegisterForm.get('lastName')?.dirty || submitted)">
-            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+         <p>Name is incorrect, it cannot exceed 30 characters.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="login-container__field">
+      <div class="register-container__field">
         <label for="email"></label>
         <input type="text" id="email" formControlName="email" placeholder="Your email">
-        <div class="text-error" *ngIf="!userRegisterForm.get('email')?.valid && 
+        <div class="text-error" *ngIf="userRegisterForm.get('email')?.hasError('pattern') && 
         (userRegisterForm.get('email')?.dirty || submitted)">
-            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+         <p>Email is required and must contain at least the @ character.</p>
         </div>
-    </div>
+      </div>
 
-    <div class="login-container__field">
+      <div class="register-container__field">
         <label for="password"></label>
         <input type="password" id="password" formControlName="password" placeholder="Your password">
         <div class="text-error" *ngIf="!userRegisterForm.get('password')?.valid && 
         (userRegisterForm.get('password')?.dirty || submitted)">
-            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+        <p>Password is incorrect, it must contain at least 6 characters, 1 uppercase, 1 lowercase and 1 num.</p>
         </div>
-    </div>
+      </div>
 
-     <div class="login-container__field">
+      <div class="register-container__field">
          <label for="confirmPassword"></label>
          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm your password">
-         <div class="text-error" *ngIf="!userRegisterForm.get('confirmPassword')?.valid &&
-         (userRegisterForm.get('confirmPassword')?.dirty || submitted)">
-          La contraseña es incorrecta, debe contener al menos 6 caracteres, 1 mayusc, 1 minusc y 1 num.
+         <div class="text-error">
+             <p *ngIf="userRegisterForm.get('confirmPassword')?.hasError('required') &&
+             (userRegisterForm.get('confirmPassword')?.dirty || submitted)">
+              Campo requerido.
+             </p>
+             <p *ngIf="userRegisterForm.get('confirmPassword')?.hasError('pattern') &&
+             (userRegisterForm.get('confirmPassword')?.dirty || submitted)">
+              Debe contener 1 mayúscula, 1 minúscula, 1 número y al menos 8 caracteres
+             </p>
+             <p *ngIf="userRegisterForm.get('confirmPassword')?.hasError('passwordMatch') &&
+             (userRegisterForm.get('confirmPassword')?.dirty || submitted)">
+              Las contraseñas no coinciden
+             </p>
          </div>
-     </div>
+         
+      </div>
       <button type="submit">Register</button>
       <p class="text-error" *ngIf="userRegisterForm.invalid && submitted"></p>
     </form>
-  </div> 
+</div> 

@@ -1,0 +1,81 @@
+@import "../../../styles/_variables";
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px;
+  margin: 150px auto;
+  width: 500px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(105, 105, 105, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  h2 {
+    font-family: $primaryFont;
+    color: $Purple;
+    font-size: 4rem;
+    line-height: 4.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  &__field {
+    margin-bottom: 20px;
+    text-align: center;
+    input {
+      font-family: $primaryFont;
+      width: 300px;
+      font-weight: 500;
+      color: $blue;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.05);
+      font-size: 1rem;
+      &:focus {
+        outline: none;
+        border: none;
+        color: $blue;
+      }
+    }
+  }
+  button {
+    font-family: $primaryFont;
+    font-weight: 500;
+    background-color: $yellow;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $orange;
+    }
+  }
+}
+
+.text-error {
+    p {
+        color: $orange;
+        font-family: $primaryFont;
+        padding: 10px 0;
+    }
+}
+
