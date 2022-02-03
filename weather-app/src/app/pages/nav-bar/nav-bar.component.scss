@@ -21,6 +21,7 @@ header {
       color: $blue;
       font-weight: 800;
       font-size: 1.4rem;
+      cursor: pointer;
       span {
         color: $green;
       }
@@ -35,9 +36,13 @@ header {
     &__item {
       color: $Purple;
       font-weight: 600;
-      padding: 1rem 0.2rem;
+      padding: 1rem 0.5rem;
       font-size: 1.1rem;
       cursor: pointer;
+      a {
+          text-decoration: none;
+          color: $Purple;
+      }
       .fas {
           color: $Purple;
       }

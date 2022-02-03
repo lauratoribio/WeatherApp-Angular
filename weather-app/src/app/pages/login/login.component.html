@@ -1,1 +1,26 @@
-<p>login works!</p>
+  
+ <div class="login-container">
+  <h2>Welcome!</h2>
+
+  <form class="login-container__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userLoginForm">
+   <div class="login-container__field">
+       <label for="name"></label>
+       <input type="text" id="name" formControlName="name" placeholder="Your name">
+       <div class="text-error" *ngIf="!userLoginForm.get('name')?.valid && 
+       (userLoginForm.get('name')?.dirty || submitted)">
+           El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+       </div>
+   </div>
+
+   <div class="login-container__field">
+       <label for="password"></label>
+       <input type="password" id="password" formControlName="password" placeholder="Your password">
+       <div class="text-error" *ngIf="!userLoginForm.get('password')?.valid &&
+       (userLoginForm.get('password')?.dirty || submitted)">
+        La contraseña es incorrecta, debe contener al menos 6 caracteres, 1 mayusc, 1 minusc y 1 num.
+       </div>
+   </div>
+    <button type="submit">Login</button>
+    <p class="text-error" *ngIf="userLoginForm.invalid && submitted"></p>
+  </form>
+</div> 

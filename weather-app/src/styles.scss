@@ -1,8 +1,19 @@
 @import "./styles/_variables";
 
 body {
-    background-color: $lila;
-    font-family: $primaryFont;
-    margin: 0px 0px;
-    padding: 0px 0px;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(209, 232, 255, 1) 100%
+  );
+  font-family: $primaryFont;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  a {
+    &:active {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
 }
