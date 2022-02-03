@@ -1,1 +1,53 @@
-<p>register works!</p>
+  
+ <div class="login-container">
+    <h2>Welcome!</h2>
+  
+    <form class="login-container__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userRegisterForm">
+     <div class="login-container__field">
+         <label for="name"></label>
+         <input type="text" id="name" formControlName="name" placeholder="Your name">
+         <div class="text-error" *ngIf="!userRegisterForm.get('name')?.valid && 
+         (userRegisterForm.get('name')?.dirty || submitted)">
+             El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+         </div>
+     </div>
+  
+     <div class="login-container__field">
+        <label for="lastName"></label>
+        <input type="text" id="lastName" formControlName="lastName" placeholder="Your lastName">
+        <div class="text-error" *ngIf="!userRegisterForm.get('lastName')?.valid && 
+        (userRegisterForm.get('lastName')?.dirty || submitted)">
+            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+        </div>
+    </div>
+
+    <div class="login-container__field">
+        <label for="email"></label>
+        <input type="text" id="email" formControlName="email" placeholder="Your email">
+        <div class="text-error" *ngIf="!userRegisterForm.get('email')?.valid && 
+        (userRegisterForm.get('email')?.dirty || submitted)">
+            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+        </div>
+    </div>
+
+    <div class="login-container__field">
+        <label for="password"></label>
+        <input type="password" id="password" formControlName="password" placeholder="Your password">
+        <div class="text-error" *ngIf="!userRegisterForm.get('password')?.valid && 
+        (userRegisterForm.get('password')?.dirty || submitted)">
+            El nombre es incorrecto, debe contener al menos 6 caracteres y no puede exceder los 20 caracteres.
+        </div>
+    </div>
+
+     <div class="login-container__field">
+         <label for="confirmPassword"></label>
+         <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm your password">
+         <div class="text-error" *ngIf="!userRegisterForm.get('confirmPassword')?.valid &&
+         (userRegisterForm.get('confirmPassword')?.dirty || submitted)">
+          La contraseña es incorrecta, debe contener al menos 6 caracteres, 1 mayusc, 1 minusc y 1 num.
+         </div>
+     </div>
+      <button type="submit">Register</button>
+      <p class="text-error" *ngIf="userRegisterForm.invalid && submitted"></p>
+    </form>
+  </div> 

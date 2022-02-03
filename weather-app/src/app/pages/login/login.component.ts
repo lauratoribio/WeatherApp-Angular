@@ -1,7 +1,6 @@
 import { UserLogin } from './../../models/userRegister.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { comparePassword } from '../../pages/utils/customValidators';
 
 @Component({
   selector: 'app-login',
