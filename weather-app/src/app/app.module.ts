@@ -12,6 +12,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { LoginComponent  } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 
 
@@ -24,7 +25,8 @@ import { RegisterComponent } from './pages/register/register.component';
     NotFoundComponent,
     NavBarComponent,
     LoginComponent,
-    RegisterComponent 
+    RegisterComponent,
+    FooterComponent 
   ],
   imports: [
     BrowserModule,

@@ -6,13 +6,15 @@
   justify-content: center;
   align-items: center;
   margin: 40px 0;
+  padding-bottom: 50px;
 
   h2 {
     font-family: $primaryFont;
     color: $Purple;
     font-size: 4rem;
     text-align: center;
-    margin: 30px 0;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 
   &__form {
